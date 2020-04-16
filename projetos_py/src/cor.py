@@ -113,15 +113,15 @@ if __name__=="__main__":
 						print("Média dos verdes: {0}, {1}".format(media[0], media[1]))
 						print("Centro dos verdes: {0}, {1}".format(centro[0], centro[1]))
 						if (media[0] > centro[0]):
-							vel = Twist(Vector3(0,0,0), Vector3(0,0,-0.2))
+							vel = Twist(Vector3(0,0,0), Vector3(0,0,-0.15))
 							if (media[0] - centro[0]) < 10:
-								vel = Twist(Vector3(0.2,0,0), Vector3(0,0,-0.1))
+								vel = Twist(Vector3(0.1,0,0), Vector3(0,0,0))
 							
 
 						if (media[0] < centro[0]):
-							vel = Twist(Vector3(0,0,0), Vector3(0,0,0.2))
+							vel = Twist(Vector3(0,0,0), Vector3(0,0,0.15))
 							if (centro[0] - media[0]) < 10:
-								vel = Twist(Vector3(0.2,0,0), Vector3(0,0,0.1))
+								vel = Twist(Vector3(0.1,0,0), Vector3(0,0,0))
 
 			velocidade_saida.publish(vel)
 			rospy.sleep(0.1)
